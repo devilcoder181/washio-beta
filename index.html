@@ -1827,17 +1827,22 @@ luxury leather belongings.</p>
 
   });
 
-  window.addEventListener('load', function() {
-    setTimeout(()=> {
-      let openMapPop = document.querySelectorAll('.mapboxgl-marker');
-      openMapPop.forEach(function(e, i) {
-        console.log(i)
-        if(i == 2){
-          e.click();
-        }
-      })
-    },100)
-  })
+  $('.contact_wrapper').viewportChecker({
+                offset: '0%',
+                callbackFunction: function(el, mm) {
+                   setTimeout(()=> {
+                      let openMapPop = document.querySelectorAll('.mapboxgl-marker');
+                      openMapPop.forEach(function(e, i) {
+                        console.log(i)
+                        if(i == 2){
+                          e.click();
+                        }
+                      })
+                    },100)
+                }
+            });
+
+ 
 
 </script>
 <footer>
@@ -1878,16 +1883,17 @@ luxury leather belongings.</p>
 
     if(!checkCookie){
       elCk.style.display = 'block'
+      let cookieBtn = document.getElementById('cookieAccep');
+
+      cookieBtn.addEventListener('click', function() {
+        window.localStorage.setItem('cookie_policy', true);
+        elCk.remove();
+      })
     }else{
       elCk.remove();
     }
 
-    let cookieBtn = document.getElementById('cookieAccep');
-
-    cookieBtn.addEventListener('click', function() {
-      window.localStorage.setItem('cookie_policy', true);
-      elCk.remove();
-    })
+    
 
   })
 </script>

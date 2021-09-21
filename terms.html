@@ -595,16 +595,17 @@
 
     if(!checkCookie){
       elCk.style.display = 'block'
+      let cookieBtn = document.getElementById('cookieAccep');
+
+      cookieBtn.addEventListener('click', function() {
+        window.localStorage.setItem('cookie_policy', true);
+        elCk.remove();
+      })
     }else{
       elCk.remove();
     }
 
-    let cookieBtn = document.getElementById('cookieAccep');
-
-    cookieBtn.addEventListener('click', function() {
-      window.localStorage.setItem('cookie_policy', true);
-      elCk.remove();
-    })
+    
 
   })
 </script></body>
