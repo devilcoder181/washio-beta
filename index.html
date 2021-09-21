@@ -1827,6 +1827,18 @@ luxury leather belongings.</p>
 
   });
 
+  window.addEventListener('load', function() {
+    setTimeout(()=> {
+      let openMapPop = document.querySelectorAll('.mapboxgl-marker');
+      openMapPop.forEach(function(e, i) {
+        console.log(i)
+        if(i == 2){
+          e.click();
+        }
+      })
+    },100)
+  })
+
 </script>
 <footer>
   <div class="container">
@@ -1849,6 +1861,36 @@ luxury leather belongings.</p>
   </div>
 </footer>
 
+<div class="cookie_policy" id="cookiePolicy" style="display: none;">
+  <div class="inner_">
+    <p>The website uses cookies, which are text files placed on your computer. Some of these are essential to the site's operation while others analyse how visitors use the site. These cookies are set by default but you can disable them or view more information about how they are used. <a href="privacy.html">Read More</a> </p>
+    <div class="btn_group">
+      <button id="cookieAccep" class="r_btn_primary"><span>Accept</span></button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  window.addEventListener('load', ()=> {
+    let elCk = document.getElementById('cookiePolicy');
+    let checkCookie = window.localStorage.getItem('cookie_policy');
+
+    if(!checkCookie){
+      elCk.style.display = 'block'
+    }else{
+      elCk.remove();
+    }
+
+    let cookieBtn = document.getElementById('cookieAccep');
+
+    cookieBtn.addEventListener('click', function() {
+      window.localStorage.setItem('cookie_policy', true);
+      elCk.remove();
+    })
+
+  })
+</script>
 </body>
 
 </html>

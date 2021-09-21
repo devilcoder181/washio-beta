@@ -533,12 +533,30 @@
     <div class="container">
         <div class="text_area">
           <ul>
-            <li><span>All credit/debit cards’ details and personally identifiable information will NOT be stored, sold, shared, rented or leased to any third parties</span></li>
-            <li><span><a href="http://washio.org/">http://washio.org/</a> will not pass any debit/credit card details to <strong>third parties</strong></span></li>
-            <li><span><a href="http://washio.org/">http://washio.org/</a> takes appropriate steps to ensure data privacy and security including through various hardware and software methodologies. However, (<a href="http://washio.org/">http://washio.org/</a>) cannot guarantee the security of any information that is disclosed online</span></li>
-            <li><span>The <a href="http://washio.org/">http://washio.org/</a> is not responsible for the privacy policies of websites to which it links. If you provide any information to such third parties different rules regarding the collection and use of your personal information may apply. You should contact these entities directly if you have any questions about their use of the information that they collect.</span></li>
+            <li>All credit/debit cards’ details and personally identifiable information will NOT be stored, sold, shared, rented or leased to any third parties</li>
+            <li><span>http://washio.org/ will not pass any debit/credit card details to <strong>third parties</strong></span></li>
+            <li><span>http://washio.org/ takes appropriate steps to ensure data privacy and security including through various hardware and software methodologies. However, (http://washio.org/) cannot guarantee the security of any information that is disclosed online</span></li>
+            <li><span>The http://washio.org/ is not responsible for the privacy policies of websites to which it links. If you provide any information to such third parties different rules regarding the collection and use of your personal information may apply. You should contact these entities directly if you have any questions about their use of the information that they collect.</span></li>
             <li><span>The Website Policies and Terms & Conditions may be changed or updated occasionally to meet the requirements and standards. Therefore, the Customers’ are encouraged to frequently visit these sections to be updated about the changes on the website. Modifications will be effective on the day they are posted</span></li>
           </ul>
+
+          <h3>Cookies</h3>
+          <p>When you visit Washio website, the website uses cookies, which are small pieces of information that allow them to maintain your connection to the website. This website may use cookies for detecting what kind of device you have in order to present content in the best way, for a language switch and/or for other purposes. These cookies do not collect or store any personally identifiable information.</p>
+
+          <h3>Delivery Policy</h3>
+          <p>We deliver our Products to all
+Countries and mainly UAE. Shipping
+will be done by a third-party courier.
+Delivery within UAE cities shall be in 1
+- 2 working days and from 4 to 10
+working Days to Other Countries.
+UAE Delivery Fees will be a Flat Rate
+of AED: 10 and Delivery Fees outside
+UAE will be mentioned on the
+checkout page depending on the country and location. Avoid any
+delivery delay by providing your full
+address along with your contact
+details.</p> </p>
         </div>
     </div>
 </section>
@@ -567,6 +585,36 @@
     </div>
   </div>
 </footer>
-</body>
+
+<div class="cookie_policy" id="cookiePolicy" style="display: none;">
+  <div class="inner_">
+    <p>The website uses cookies, which are text files placed on your computer. Some of these are essential to the site's operation while others analyse how visitors use the site. These cookies are set by default but you can disable them or view more information about how they are used. <a href="privacy.html">Read More</a> </p>
+    <div class="btn_group">
+      <button id="cookieAccep" class="r_btn_primary"><span>Accept</span></button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  window.addEventListener('load', ()=> {
+    let elCk = document.getElementById('cookiePolicy');
+    let checkCookie = window.localStorage.getItem('cookie_policy');
+
+    if(!checkCookie){
+      elCk.style.display = 'block'
+    }else{
+      elCk.remove();
+    }
+
+    let cookieBtn = document.getElementById('cookieAccep');
+
+    cookieBtn.addEventListener('click', function() {
+      window.localStorage.setItem('cookie_policy', true);
+      elCk.remove();
+    })
+
+  })
+</script></body>
 
 </html>
